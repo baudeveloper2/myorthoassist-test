@@ -1,0 +1,549 @@
+// THEME.scss
+$color-primary: #2073b5;
+$color-secondary: #8eba38;
+$color-background: #d9e1e8;
+$color-background-sidebar: #f4f8fb;
+$color-background-icon: rgba(16,66,109,0.1);
+$color-background-icon-solid: rgba(16,66,109,1);
+$color-background-icon-alt: rgba(142,186,56,0.1);
+$color-background-icon-alt-solid: rgba(142,186,56,1);
+$color-navtabs: #b9c7d3;
+$color-navtab-text: #585f65;
+$color-disabled: #b9c7d3;
+$color-text: #333333;
+$color-mute: #d7d7d7;
+$color-mute-blue: #9ca1b2;
+
+html {
+  background: $color-background;
+}
+body {
+  background: transparent;
+}
+h4 {
+  @include font(14);
+  margin-bottom: 12px;
+}
+h5 {
+  @include font-size(14);
+}
+a, a > * {
+  transition: all 0.25s ease;
+}
+a, a:hover {
+  text-decoration: none;
+}
+
+.button {
+  text-transform: uppercase;
+  color: $color-primary;
+  display: inline-block;
+
+  &-primary {
+    border: 2px solid $color-primary;
+    padding: 10px 20px;
+    border-radius: 25px;
+
+    &:hover {
+      background: #fff;
+    }
+  }
+  &-special {
+    text-align: center;
+    @include font(12);
+    color: $color-primary;
+    text-transform: none;
+
+    .icon {
+      border: 1px solid $color-primary;
+      border-radius: 100%;
+      background: $color-background-icon;
+      width: 57px;
+      height: 57px;
+      display: inline-block;
+      margin: 0px;
+    }
+    .fa {
+      @include font(32);
+      padding: 4px 0px;
+    }
+    .label {
+      margin-top: 7px;
+      font-weight: 600;
+    }
+    &:hover {
+      .icon {
+        background: $color-background-icon-solid;
+      }
+      .fa {
+        color: #fff;
+      }
+    }
+
+    &-alt {
+      color: $color-secondary;
+
+      .icon {
+        border-color: $color-secondary;
+        background: $color-background-icon-alt;
+      }
+      &:hover {
+        color: $color-secondary;
+
+        .icon {
+          background: $color-background-icon-alt-solid;
+        }
+        .fa {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.icon {
+  margin-right: 8px;
+}
+.note {
+  text-align: center;
+  color: $color-primary;
+  @include font(12);
+  margin: 5px 0px;
+}
+
+.navigation-main {
+  background-color: $color-primary;
+  background-image: url('../../images/bg-main.jpg');
+  color: #fff;
+  padding: 0px 15px;
+
+  &-links {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    li, a {
+      display: inline-block;
+    }
+    a:not(.user-photo) {
+      padding: 30px 25px;
+      color: inherit;
+      border-bottom: 4px solid rgba(255,255,255,0);
+
+      &:hover {
+        border-color: rgba(255,255,255,0.5);
+      }
+      &.active {
+        border-color: rgba(255,255,255,1);
+      }
+    }
+  }
+  .user-photo {
+    padding: 0px;
+
+    img {
+      width: 39px;
+      height: 39px;
+      object-fit: cover;
+      object-position: center;
+      max-width: none;
+      border-radius: 40px;
+    }
+  }
+}
+
+.navigation-secondary {
+  padding: 0px 15px;
+
+  a {
+    text-transform: uppercase;
+    @include font(12);
+  }
+  .fa {
+    @include font(8);
+    margin-right: 5px;
+  }
+}
+
+.patient-details {
+  @include font(14);
+  color: $color-text;
+  margin-bottom: 20px;
+  padding: 0px 15px;
+
+  .form-group {
+    margin: 0px;
+    margin-bottom: 10px;
+  }
+  .label {
+    margin-bottom: 3px;
+    display: block;
+  }
+  .patient-photo {
+    display: inline-block;
+    height: 97px;
+    width: 97px;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+  }
+  .form-control {
+    @include font(14);
+    border-radius: 2px;
+    padding: 5px 8px;
+    border-color: $color-mute;
+  }
+  .form-group select.form-control {
+    height: 33px;
+  }
+  .form-control.date {
+    background-image:url("../images/icon-calendar.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+}
+.patient-details-mobile {
+  color: $color-text;
+  background: $color-background;
+
+  p {
+    margin: 0px;
+  }
+  button {
+    display: none !important; //temp
+  }
+  .item {
+    padding: 15px;
+  }
+  .patient-photo {
+    width: 54px;
+    height: 54px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+  .patient-name {
+    color: $color-primary;
+    @include font(16);
+    padding: 0px 40px;
+  }
+  .patient-genderandage {
+    @include font(12);
+    background: none;
+    padding: 0px 40px;
+    font-weight: 500;
+
+    .gender, .age {
+      display: inline-block;
+    }
+    .gender {
+      padding-right: 8px;
+    }
+  }
+  .patient-detail-more {
+    @include font(12);
+    text-align: center;
+    padding: 8px 0px;
+
+    p {
+      margin-bottom: 0px;
+    }
+    span {
+      display: block;
+    }
+    .label {
+      font-weight: 500;
+    }
+  }
+}
+
+.content {
+
+  > .row {
+    position: relative;
+    overflow: hidden;
+  }
+  .content-sidebar {
+    padding: 0px 15px;
+    border-left: 1px solid $color-background;
+    border-top: 1px solid $color-mute;
+    background: $color-background-sidebar;
+    
+    //margin-top: 36px;
+    //max-height: 554px;
+    //overflow: scroll;
+
+    position: absolute;
+    right: 0;
+    top: 36px;
+    bottom: 0;
+    overflow: scroll;
+
+    .block {
+      padding-top: 15px;
+      border-bottom: 1px solid $color-mute;
+
+      .last-updated {
+        @include font-fixed(10);
+        text-align: right;
+        margin: 10px 0px;
+      }
+    }
+    h4 {
+      @include font-fixed(14);
+    }
+  }
+}
+.recentorthoset {
+  .col {
+    padding: 0px 10px;
+  }
+  .row {
+    margin-bottom: 10px;
+  }
+  & > .row:last-of-type {
+    margin-bottom: 0px;
+  }
+}
+
+#patientTab {
+  padding: 0px 15px;
+  border: 0px;
+  background: $color-background;
+
+  a {
+    border: 0px;
+    @include font(14);
+  }
+  a:not(.active) {
+    background: $color-navtabs;
+    color: $color-navtab-text;
+  }
+  a.active {
+    color: $color-primary;
+  }
+  .fa {
+    margin-right: 3px;
+  }
+
+  &>li {
+    margin: 0px;
+
+    a {
+      border-radius: 0px;
+    }
+    &:first-child a {
+      border-top-left-radius: 6px;
+    }
+    &:last-child a {
+      border-top-right-radius: 6px;
+    }
+  }
+}
+#patientTabContent {
+  padding: 15px;
+  background: #fff;
+  min-height: 553px;
+}
+
+.brace-details {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  @include font(14);
+
+  .form-group {
+    margin-bottom: 0px;
+  }
+  .label {
+    padding-right: 5px;
+    margin: 0px;
+  }
+  .form-control {
+    @include font(14);
+    padding: 5px;
+  }
+  .date-modified {
+    @include font(10);
+    margin: 0px;
+  }
+}
+
+.notes-mobile {
+  text-align: center;
+}
+
+.notes {
+  @include font-size(12);
+  border: 1px solid $color-mute;
+
+  a {
+    color: #000;
+  }
+  .fa {
+    @include font-size(8);
+    margin-right: 5px;
+  }
+  &-label {
+    display: inline-block;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+    padding: 8px 14px;
+    @include font-size(14);
+  }
+  &-content {
+    padding: 15px;
+
+    p {
+      min-height: 72px;
+    }
+    textarea.form-control {
+      min-height: 72px;
+      margin-bottom: 16px;
+    }
+  }
+  .card, .card-header {
+    border: 0px;
+    border-radius: 0px;
+    background: transparent;
+  }
+  .card {
+    border-top: 1px solid rgba(32,115,181,0.24);
+  }
+  .card-header {
+    h5 {
+      margin-bottom: 0px;
+    }
+    .fa {
+      transition: all 0.25s ease;
+    }
+    a[aria-expanded=true] .fa {
+      transform: rotate(180deg);
+    }
+  }
+  &-orthodontist {
+    background: #e7ecf0;
+    border-right: 1px solid $color-mute;
+
+    .notes-label {
+      background: #2073b5;
+    }
+    .fa {
+      color: $color-primary;
+    }
+  }
+  &-yours {
+    background: #f3f8eb;
+
+    .notes-label {
+      background: #8eba38;
+    }
+    .fa {
+      color: $color-secondary;
+    }
+    .card {
+      border-color: $color-secondary;
+    }
+  }
+  .accordion-disabled {
+    opacity: 0.3;
+  }
+}
+
+.actions {
+  a {
+    padding: 15px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  a.disabled {
+    color: $color-disabled;
+  }
+}
+
+.footer {
+  @include font(12);
+  color: $color-text;
+  padding: 30px 15px;
+
+  a {
+    color: $color-text;
+    text-decoration: underline;
+  }
+}
+
+.nav-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fcfcfc;
+  box-shadow: 3px 0px 7px rgba(0,0,0,0.08);
+
+  .nav-mobile-item {
+    border-top: 1px solid #d7d7d7;
+  }
+  #patientTab-mobile {
+    li {
+      padding: 0px;
+    }
+    a {
+      display: block;
+      width: 100%;
+      border-radius: 0px;
+      text-align: center;
+      border: 0px;
+      color: $color-mute-blue;
+
+      &.active {
+        color: $color-primary;
+      }
+    }
+    .fa {
+      @include font(24);
+    }
+    p.label {
+      @include font(11);
+      font-weight: 400;
+      margin: 0px;
+    }
+  }
+}
+
+.lightboxOverlay {
+  background: $color-primary;
+}
+.lb-data .lb-number,
+.lb-data .lb-caption  {
+  color: #fff;
+}
+
+//modal
+#notes-modal {
+  text-align: center;
+
+  button.close {
+    color: #fff;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 25px;
+    @include font(12);
+    font-weight: 400;
+    opacity: 1;
+    margin: 0px auto;
+    margin-top: 10px;
+    float: none;
+    display: inline-block;
+  }
+  .modal-body {
+    text-align: left;
+    padding: 0px;
+  }
+}
+.modal-backdrop {
+  background-color: $color-primary;
+  
+  &.show {
+    opacity: 0.8;
+  }
+}

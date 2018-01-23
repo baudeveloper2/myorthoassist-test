@@ -1,0 +1,166 @@
+.brace-details.row
+  .col-6.col-md
+    .form-group
+      .row.no-gutters.align-items-center
+        .col-12.col-md-auto
+          label.label(for="upperwire") Upper Wire:
+        .col
+          input#upperwire.form-control(type="text",value="19x25 HAniti")
+    p.date-modified.text-md-right 4 April 2016
+  .col-6.col-md
+    .form-group
+      .row.no-gutters.align-items-center
+        .col-12.col-md-auto
+          label.label(for="upperwire") Lower Wire:
+        .col 
+          input#lowerwire.form-control(type="text")
+    p.date-modified.text-md-right
+  .col-6.col-md
+    .form-group
+      .row.no-gutters.align-items-center
+        .col-12.col-md-auto
+          label.label(for="upperwire") Right Elastic:
+        .col
+          input#rightelastic.form-control(type="text")
+    p.date-modified.text-md-right
+  .col-6.col-md
+    .form-group
+      .row.no-gutters.align-items-center
+        .col-12.col-md-auto
+          label.label(for="upperwire") Left Elastic:
+        .col
+          input#leftelastic.form-control(type="text")
+    p.date-modified.text-md-right
+
+.notes-mobile.row.no-gutters.d-flex.d-md-none
+  .col
+    a.button.button-special(href="#",data-toggle="modal",data-target="#notes-modal", show-data="notes-orthodontist")
+      span.icon
+        i.fa.fa-file-text
+      p.label Orthodontist's Notes
+  .col
+    a.button.button-special.button-special-alt(href="#",data-toggle="modal",data-target="#notes-modal", show-data="notes-yours")
+      span.icon
+        i.fa.fa-file-text
+      p.label Your Notes
+
+.notes.row.no-gutters.d-none.d-md-flex
+  .notes-orthodontist.col
+    .notes-label Orthodontist’s Notes
+    .notes-content
+      h5 Notes
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    #accordion-notes-orthodontist
+      .card
+        .card-header
+          h5
+            a(href="#problemlist", data-toggle="collapse") 
+              i.fa.fa-chevron-down
+              | Problem List
+        //#problemlist.collapse.show(data-parent="#accordion-notes")
+        #problemlist.collapse(data-parent="#accordion-notes-orthodontist")
+          .card-body
+            p problem list
+      .card
+        .card-header
+          h5
+            a(href="#objectives", data-toggle="collapse")
+              i.fa.fa-chevron-down
+              | Treatment Objectives
+        #objectives.collapse(data-parent="#accordion-notes-orthodontist")
+          .card-body
+            p treatment objectives
+      .card
+        .card-header
+          h5
+            a(href="#options", data-toggle="collapse")
+              i.fa.fa-chevron-down
+              | Treatment Options
+        #options.collapse(data-parent="#accordion-notes-orthodontist")
+          .card-body
+            p treatment Options
+      .card
+        .card-header
+          h5
+            a(href="#limitation", data-toggle="collapse") 
+              i.fa.fa-chevron-down
+              | Limitation to Treatment
+        #limitation.collapse(data-parent="#accordion-notes-orthodontist")
+          .card-body
+            p Limitation to Treatment
+      .card
+        .card-header
+          h5
+            a(href="#plan", data-toggle="collapse") 
+              i.fa.fa-chevron-down
+              | Treatment Plan
+        #plan.collapse(data-parent="#accordion-notes-orthodontist")
+          .card-body
+            p Treatment Plan
+
+  .notes-yours.col
+    .notes-label Your Notes
+    .notes-content
+      h5 Notes
+      //p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      textarea.form-control
+    #accordion-notes-yours.accordion-disabled
+      .card
+        .card-header
+          h5
+            a(href="#problemlist-yours", data-toggle="collapse") 
+              i.fa.fa-chevron-down
+              | Problem List
+        //#problemlist.collapse.show(data-parent="#accordion-notes")
+        #problemlist-yours.collapse(data-parent="#accordion-notes-yours")
+          .card-body
+            p problem list
+      .card
+        .card-header
+          h5
+            a(href="#objectives-yours", data-toggle="collapse")
+              i.fa.fa-chevron-down
+              | Treatment Objectives
+        #objectives-yours.collapse(data-parent="#accordion-notes-yours")
+          .card-body
+            p treatment objectives
+      .card
+        .card-header
+          h5
+            a(href="#options-yours", data-toggle="collapse")
+              i.fa.fa-chevron-down
+              | Treatment Options
+        #options-yours.collapse(data-parent="#accordion-notes-yours")
+          .card-body
+            p treatment Options
+      .card
+        .card-header
+          h5
+            a(href="#limitation-yours", data-toggle="collapse") 
+              i.fa.fa-chevron-down
+              | Limitation to Treatment
+        #limitation-yours.collapse(data-parent="#accordion-notes-yours")
+          .card-body
+            p Limitation to Treatment
+      .card
+        .card-header
+          h5
+            a(href="#plan-yours", data-toggle="collapse") 
+              i.fa.fa-chevron-down
+              | Treatment Plan
+        #plan-yours.collapse(data-parent="#accordion-notes-yours")
+          .card-body
+            p Treatment Plan
+
+.actions.row.d-none.d-md-flex
+  .col.text-right
+    a.disabled(href="#") Cancel
+    a(href="#") Save
+
+#notes-modal.notes.modal.fade(tabindex="-1",role="dialog")
+  .modal-dialog
+    .modal-content
+      .modal-body
+  button.close(type="button", data-dismiss="modal", aria-label="Close")
+    //span(aria-hidden="true") &times;
+    | Hide Notes

@@ -1,0 +1,74 @@
+section.patient-details.patient-details-full.d-none.d-md-block
+  .row
+    .col-auto
+      label.label Patient Photo
+      img.patient-photo(src="../images/patientphoto-isabellastrong.jpg")
+    .col
+      .row
+        //.col-12.col-lg-auto
+        .col-auto
+          .form-group
+            label.label(for="patientname") Patient Name
+            input#patientname.form-control(type="text",value="Isabella Strong")
+          .row
+            .col
+              .form-group
+                label.label(for="status") Status
+                //input#status.form-control(type="text")
+                select#status.form-control(name="status")
+                  option(value="active") Active
+                  option(value="inactive") Inactive
+            .col
+              .form-group
+                label.label(for="casestartdate") Case Start Date
+                input#casestartdate.form-control.date(type="text",value="04/04/2017")
+        //.col-12.col-lg
+        .col
+          .form-group
+            label.label(for="gender") Gender
+            //input#gender.form-control(type="text")
+            select#gender.form-control(name="gender")
+                  option(value="female") Female
+                  option(value="male") Male
+          .form-group
+            label.label(for="casetype") Case Type
+            //input#casetype.form-control(type="text")
+            select#casetype.form-control(name="casetype")
+                  option(value="invisalign") Invisalign
+                  option(value="others") Others
+        .col
+          .form-group
+            label.label(for="birthdate") Birthdate
+            input#birthdate.form-control.date(type="text",value="01/06/2006")
+    //.col-4.align-self-center.text-center
+    .col-12.col-lg-3.mt-md-3.mt-lg-0.align-self-center.text-center
+      a.button.button-primary(href="#")
+        img.icon(src="../images/icon-plus.png")
+        | Add Images
+      p.note or Documents (PDF, DOC)
+
+section.patient-details-mobile.d-block.d-md-none
+  .patient-details-mobile-slider
+    .item
+      .row.no-gutters
+        .col-auto
+          img.patient-photo(src="../images/patientphoto-isabellastrong.jpg")
+        .col.align-self-center
+          p.patient-name Isabella Strong
+          p.patient-genderandage
+            span.gender (Female)
+            span.age 10y,9m
+    .item
+      .row.no-gutters.align-items-center
+        .col.patient-detail-more
+          p.patient-status
+            span.label Status
+            span.value Active
+        .col.patient-detail-more
+          p.patient-casetype
+            span.label Case Type
+            span.value Invisalign
+        .col.patient-detail-more
+          p.patient-casestartdate
+            span.label Case Start Date
+            span.value 04/04/2017

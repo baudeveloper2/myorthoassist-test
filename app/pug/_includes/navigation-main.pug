@@ -1,0 +1,43 @@
+section.navigation-main
+  .row.no-gutters
+    .md-header.col-12.col-md-auto.align-self-center.text-center.text-md-left
+      i.fa.fa-chevron-left.d-md-none.align-self-center
+      img(src="../images/logo-main.png")
+      a.user-photo(href="#").d-md-none
+        img(src="../images/user-photo.jpg")
+    .md-links.col.text-center.text-md-right
+      ul.navigation-main-links
+        li
+          a.active(href="#") Cases
+        li
+          a(href="#") Resources
+        li
+          a(href="#") Account
+        li
+          a.user-photo(href="#").d-none.d-md-block
+            img(src="../images/user-photo.jpg")
+
+//nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+  .container
+    a.navbar-brand(href='#') Navbar
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarsExampleDefault.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item(class=(bodyClass === 'home' ? 'active' : ''))
+          a.nav-link(href='/')
+            | Home
+            span.sr-only (current)
+        li.nav-item(class=(bodyClass === 'about' ? 'active' : ''))
+          a.nav-link(href='/about.html') About
+        li.nav-item
+          a.nav-link.disabled(href='#') Disabled
+        li.nav-item.dropdown
+          a#dropdown01.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+          .dropdown-menu(aria-labelledby='dropdown01')
+            a.dropdown-item(href='#') Action
+            a.dropdown-item(href='#') Another action
+            a.dropdown-item(href='#') Something else here
+      form.form-inline.my-2.my-lg-0
+        input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search

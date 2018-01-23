@@ -1,0 +1,46 @@
+// MEDIA QUERY (MEDIUM SCREENS ONLY)
+// Check this link for more information: http://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints
+// 48rem = 768px
+
+//navigation
+html {
+  background: #fff;
+}
+
+.navigation-main {
+  .md-header {
+    padding: 10px 15px;
+    padding-top: 20px;
+
+    .fa {
+      float:left;
+      padding: 15px 0px;
+      cursor: pointer;
+    }
+    .user-photo {
+      float: right;
+    }
+  }
+  .md-links {
+    .navigation-main-links a {
+      padding: 10px 25px;
+    }
+  }
+}
+
+//patient-details
+.patient-details {
+  background: $color-background;
+}
+
+//content
+.brace-details {
+  @include font(12);
+
+  & > div {
+    margin-bottom: 15px;
+  }
+  .label {
+    margin-bottom: 2px;
+  }
+}

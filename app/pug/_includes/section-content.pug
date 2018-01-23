@@ -1,0 +1,46 @@
+section.content
+  .row.no-gutters
+    .content-main.col.col-md-9
+      ul#patientTab.nav.nav-tabs(role="tablist").d-none.d-md-flex
+        li.nav-item
+          a#tab-conversation.nav-link(href="#conversation",data-toggle="tab")
+            i.fa.fa-comments
+            | Conversation
+        li.nav-item
+          a#tab-diagnosis.nav-link.active(href="#diagnosis",data-toggle="tab")
+            i.fa.fa-clipboard
+            | Diagnosis &amp; Treatment
+        li.nav-item
+          a#tab-medialibrary.nav-link(href="#medialibrary",data-toggle="tab")
+            i.fa.fa-picture-o
+            | Media Library
+      #patientTabContent.tab-content
+        #conversation.tab-pane.fade
+        #diagnosis.tab-pane.fade.show.active
+          include block-diagnosisandtreatment
+        #medialibrary.tab-pane.fade
+        
+    .content-sidebar.col-3.d-none.d-md-block
+      include block-recentorthoset
+      include block-recentpanorex
+      include block-recentlateralcephalogram
+      include block-recentfullmouthseries
+
+    .nav-mobile.col-12.d-block.d-md-none
+      .actions.actions-mobile.nav-mobile-item.text-center
+        a.disabled(href="#") Cancel
+        a(href="#") Save
+
+      ul#patientTab-mobile.nav-mobile-item.nav.nav-tabs.row(role="tablist")
+        li.nav-item.col
+          a#tab-conversation.nav-link(href="#conversation",data-toggle="tab")
+            i.fa.fa-comments
+            p.label Conversation
+        li.nav-item.col
+          a#tab-diagnosis.nav-link.active(href="#diagnosis",data-toggle="tab")
+            i.fa.fa-clipboard
+            p.label Diagnosis &amp; Treatment
+        li.nav-item.col
+          a#tab-medialibrary.nav-link(href="#medialibrary",data-toggle="tab")
+            i.fa.fa-picture-o
+            p.label Media Library
